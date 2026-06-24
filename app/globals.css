@@ -1,0 +1,131 @@
+/* stylelint-disable at-rule-no-unknown */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: 'Inter', sans-serif;
+    color: #1A1A1A;
+    background-color: #F8F5F0;
+
+    --color-cream: #F8F5F0;
+    --color-porcelain: #FFFDF8;
+    --color-ink: #1A1A1A;
+    --color-espresso: #2D1E17;
+    --color-terracotta: #C47A5A;
+    --color-olive: #7D8B6A;
+    --color-beige: #D9C7AE;
+    --color-prosecco: #F4D6A6;
+    --space-section: clamp(5rem, 8vw, 8rem);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--color-ink);
+    background: var(--color-cream);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  section {
+    position: relative;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+
+  button,
+  a.button {
+    transition: all 0.25s ease;
+  }
+
+  ::selection {
+    color: var(--color-ink);
+    background: rgba(196, 122, 90, 0.28);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(217, 199, 174, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .ds-container {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .ds-section {
+    @apply px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-32;
+  }
+
+  .ds-eyebrow {
+    @apply text-eyebrow font-semibold uppercase text-olive;
+  }
+
+  .ds-heading-xl {
+    @apply font-display text-5xl font-semibold leading-[0.95] text-ink sm:text-6xl lg:text-7xl;
+  }
+
+  .ds-heading-lg {
+    @apply font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl;
+  }
+
+  .ds-lead {
+    @apply text-base leading-8 text-ink/80 sm:text-lead;
+  }
+
+  .ds-card {
+    @apply rounded-card border border-beige/25 bg-porcelain shadow-soft transition duration-300;
+  }
+
+  .ds-card-hover {
+    @apply hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-lift;
+  }
+
+  .ds-button {
+    @apply inline-flex min-h-12 items-center justify-center rounded-pill px-5 text-xs font-semibold uppercase tracking-[0.13em] transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta/70 focus-visible:ring-offset-2 focus-visible:ring-offset-cream sm:px-6 sm:text-sm sm:tracking-[0.16em];
+  }
+
+  .ds-button-primary {
+    @apply bg-terracotta text-white shadow-glow hover:bg-wine;
+  }
+
+  .ds-button-secondary {
+    @apply border border-ink/10 bg-white text-ink shadow-soft hover:border-terracotta/40 hover:text-terracotta;
+  }
+
+  .ds-input {
+    @apply min-h-12 w-full rounded-card border border-beige/40 bg-white px-4 text-sm text-ink outline-none transition duration-300 placeholder:text-ink/40 focus:border-terracotta/70 focus:ring-4 focus:ring-terracotta/10;
+  }
+
+  .ds-label {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-olive;
+  }
+}
